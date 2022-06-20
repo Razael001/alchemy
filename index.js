@@ -31,6 +31,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
-app.listen('1564', () => {
+app.listen(process.env.PORT || '1564', () => {
   console.log("connected successful")
 })
