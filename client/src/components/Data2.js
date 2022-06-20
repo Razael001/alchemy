@@ -36,7 +36,7 @@ export const Projectz = [
         link: "https://reciperz.netlify.app/"
     },
     {
-        img: ["../images/expense1.jpeg", "../images/Expense5.png", "../images/Expense2.png", "../images/expense3.png", "../images/expense4.png"],
+        img: ["../images/Expense1.jpeg", "../images/expense5.png", "../images/Expense2.png", "../images/expense3.png", "../images/expense4.png"],
         name: "Expense Tracker",
         no: 0,
         desc: "Money management made simple. Budget planner, bill organizer and money saver. Track your expenses, stick to budget, save money. it's that simple",

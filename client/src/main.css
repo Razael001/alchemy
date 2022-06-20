@@ -56,12 +56,8 @@ body {
   height: 250px;
   background-size: cover;
   margin-right: 80px;
-  border: 1px solid rgba(128, 128, 128, 0.271);
-  opacity: 0.5;
-}
-
-.imgcalc:hover {
-  opacity: 0.4;
+  border: none;
+  /*opacity: 0.5; */
 }
 
 .imgcalc2 {
@@ -247,6 +243,23 @@ body {
   justify-content: space-between;
   width: 100%;
 }
+.hoverr {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: black;
+}
+.hoverr:hover {
+  opacity: 1;
+}
+.xxx {
+  background-color: #000;
+  height: 70px;
+  width: 180px;
+  margin-top: 100px;
+  font-weight: 500;
+  font-size: large;
+}
 
 .ratings {
   width: 90%;
@@ -256,7 +269,7 @@ body {
 }
 .aboutp {
   color: white;
-  width: 95%;
+  width: 80%;
   padding-top: 10vh;
   padding-left: 40px;
   padding-right: 40px;
@@ -504,6 +517,9 @@ body {
   .btn1 {
     width: 50%;
     align-items: center;
+  }
+  .floo {
+    padding-right: 35px;
   }
 
   .btn2 {

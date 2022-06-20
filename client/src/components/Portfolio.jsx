@@ -19,7 +19,7 @@ const Portfolio = ({ theme, setTheme, portdi, setInfodi, setAboutdi, setServdi, 
                 <div className='okay'>
                     {Projects.map((proj) => {
                         return (
-                          <Project proj={proj} theme={theme} />
+                          <Project proj={proj} theme={theme} key={Math.random()}/>
                         )
                     })}
                 </div>
@@ -27,7 +27,7 @@ const Portfolio = ({ theme, setTheme, portdi, setInfodi, setAboutdi, setServdi, 
                     {Projectz.map((proj) => {
 
                         return (
-                          <Project proj={proj} theme={theme} />
+                          <Project proj={proj} theme={theme} key={Math.random()}/>
                         )
                     })}
                 </div>

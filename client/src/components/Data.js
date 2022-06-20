@@ -35,6 +35,13 @@ export const Projects = [
         link: "https://todoapprz.netlify.app/"
     },
     {
+        img: ["../images/cbt3a.jpeg", "../images/cbtappa.jpeg", "../images/cbtapp2a.jpeg"],
+        name: "CBT App",
+        no: 0,
+        desc: "Computer based test for science subjects practice, I made this site to help some of my friends prepare for an exam",
+        link: "https://rzcbt.netlify.app/"
+    },
+    {
         img: ["../images/admin1.jpeg", "../images/admin2.jpeg", "../images/admin3.jpeg", "../images/admin4.jpeg"],
         name: "Rz Stores Admin Panel",
         no: 0,

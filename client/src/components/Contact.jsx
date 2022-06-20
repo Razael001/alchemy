@@ -73,6 +73,7 @@ const Contact = ({ theme, setTheme, contdi, setInfodi, setAboutdi, setServdi, se
                     </center>
                 </div>
             </div>
+            <div className='floo'>
             <center>
                 <br /><br/>
                 <h5 style={{ color: theme }}>SEND ME A MESSAGE</h5><br />
@@ -85,6 +86,7 @@ const Contact = ({ theme, setTheme, contdi, setInfodi, setAboutdi, setServdi, se
             <input className='tinput' placeholder='Message' onChange={(e) => {setMessage(e.target.value)}}/>
             </center>
             <button className='btn2' style={{borderColor: theme,marginLeft: "30px"}} onClick={sendMessage}>Send Message</button>
+            </div>
             <Settings style={{color: "white",float:" right",padding: "30px",display: disp2, color: "white"}} onClick={() => {setDisp(disp == "none" ? "block" : "none")}}/>
             <div className='theme' style={{display: disp}}>
                 <center>
