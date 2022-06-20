@@ -9,7 +9,7 @@ const Contact = ({ theme, setTheme, contdi, setInfodi, setAboutdi, setServdi, se
     const [message, setMessage] = useState("")
 
     async function sendMessage(){
-        const response = await fetch("http://razaell.herokuapp.com/api/sendmessage", {
+        const response = await fetch("https://razaell.herokuapp.com/api/sendmessage", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
