@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react'
-const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, setPortdi, navdis, setNavdis }) => {
-    const [home, setHome] = useState("teal")
-    const [about, setAbout] = useState("white")
-    const [services, setServices] = useState("white")
-    const [portfolio, setPortfolio] = useState("white")
-    const [contact, setContact] = useState("white")
+const NavBar = ({ skill, setSkill, skilldi, setSkilldi, home, setHome, about, setAbout, services, setServices, portfolio, setPortfolio, contact, setContact, theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, setPortdi, navdis, setNavdis }) => {
 
     useEffect(() => {
         if (home !== "white") {
@@ -22,7 +17,22 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         else if (contact !== "white") {
             setContact(theme)
         }
+        else if (skill !== "white") {
+            setSkill(theme)
+        }
     }, [theme])
+
+    useEffect(() => {
+        setInterval(() => {
+            var w = window.innerWidth;
+            if (w > 700) {
+                setNavdis("none")
+            }
+            else {
+
+            }
+        }, 1000)
+    })
 
     const homeset = () => {
         setHome(theme)
@@ -34,6 +44,8 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         setAboutdi("none")
         setContdi("none")
         setServdi("none")
+        setSkill("white")
+        setSkilldi("none")
         setPortdi("none")
         setNavdis("none")
     }
@@ -44,6 +56,8 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         setServices("white")
         setPortfolio("white")
         setContact("white")
+        setSkill("white")
+        setSkilldi("none")
         setInfodi("none")
         setAboutdi("block")
         setContdi("none")
@@ -58,6 +72,8 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         setContact("white")
         setInfodi("none")
         setAboutdi("none")
+        setSkill("white")
+        setSkilldi("none")
         setContdi("none")
         setServdi("block")
         setPortdi("none")
@@ -69,6 +85,8 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         setServices("white")
         setPortfolio(theme)
         setContact("white")
+        setSkill("white")
+        setSkilldi("none")
         setInfodi("none")
         setAboutdi("none")
         setContdi("none")
@@ -81,6 +99,8 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         setAbout("white")
         setServices("white")
         setPortfolio("white")
+        setSkill("white")
+        setSkilldi("none")
         setContact(theme)
         setInfodi("none")
         setAboutdi("none")
@@ -89,6 +109,23 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
         setPortdi("none")
         setNavdis("none")
     }
+    const skillset = () => {
+        setHome("white")
+        setAbout("white")
+        setServices("white")
+        setPortfolio("white")
+        setSkill(theme)
+        setSkilldi("block")
+        setContact("white")
+        setInfodi("none")
+        setAboutdi("none")
+        setContdi("none")
+        setServdi("none")
+        setPortdi("none")
+        setNavdis("none")
+    }
+
+
 
 
     return (
@@ -96,10 +133,10 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
             <center>
                 <div className="hhgf" style={{ borderTop: `5px solid ${theme}`, borderRight: `5px solid ${theme}`, marginBottom: "0" }}></div>
                 <div className='logo' style={{ margin: "0", padding: "0" }}>Atlas</div>
-                <div className="hhga" style={{ borderBottom: `5px solid ${theme}`, borderLeft: `5px solid ${theme}`}}></div>
+                <div className="hhga" style={{ borderBottom: `5px solid ${theme}`, borderLeft: `5px solid ${theme}` }}></div>
                 <div className='links'>
                     <div>
-                        <p className='list' style={{ color: home }} onClick={homeset}>Home</p>
+                        <p className='list' style={{ color: home }} onClick={() => { window.location = "/" }}>Home</p>
                         <div className='line' />
                     </div>
                     <div>
@@ -108,6 +145,10 @@ const NavBar = ({ theme, setTheme, setInfodi, setAboutdi, setServdi, setContdi, 
                     </div>
                     <div>
                         <p className='list' style={{ color: services }} onClick={servicesset}>Services</p>
+                        <div className='line' />
+                    </div>
+                    <div>
+                        <p className='list' style={{ color: skill }} onClick={skillset}>Skills</p>
                         <div className='line' />
                     </div>
                     <div>

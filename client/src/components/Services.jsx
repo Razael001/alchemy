@@ -1,126 +1,97 @@
 import { Settings } from '@material-ui/icons'
 import React, { useState } from 'react'
 
-const Services = ({ theme, setTheme, servdi, setInfodi, setAboutdi, setServdi, setContdi, setPortdi}) => {
+const Services = ({ navdis, setNavdis, theme, setTheme, servdi, setInfodi, setAboutdi, setServdi, setContdi, setPortdi }) => {
     const [disp, setDisp] = useState("none")
     const [disp2, setDisp2] = useState("block")
 
+    const brownth = () => {
+        setTheme("brown")
+        localStorage.setItem("Atlastheme", "brown")
+    }
+    const orangeth = () => {
+        setTheme("orange")
+        localStorage.setItem("Atlastheme", "orange")
+    }
+    const tealth = () => {
+        setTheme("teal")
+        localStorage.setItem("Atlastheme", "teal")
+    }
+    const tanth = () => {
+        setTheme("tan")
+        localStorage.setItem("Atlastheme", "tan")
+    }
+    const pinkth = () => {
+        setTheme("pink")
+        localStorage.setItem("Atlastheme", "pink")
+    }
+
+    const nonethem =() => {
+        setNavdis("none")
+
+        if (disp == "block") {
+            setDisp("none")
+        }
+        else {
+
+        }
+    }
+
     return (
-        <div className='about' style={{display: servdi}}>
-            <div>
-                <h1 className='textheader' style={{marginTop: "0"}}>Services</h1>
-                <div className='flex1' style={{ backgroundColor: theme }}></div>
-                <div className='flex3' style={{ backgroundColor: theme }}></div>
+        <div className='about' style={{ display: servdi }} onClick={nonethem}>
+            <div className='offer'>
+                <p>What i offer</p>
+                <h2 style={{ color: theme }}> Services </h2>
             </div>
-            <div>
-                <h2 style={{ color: theme }}>Languages and frameworks</h2><br /><br />
-                <div className='skills'>
-                    <div className='killl' style={{width: "100%"}}>
-                        <div>
-                            <div className='item'>
-                                <h5>React Js</h5>
-                                <h5>92%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "92%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>CSS</h5>
-                                <h5>90%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "90%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>Vanilla Js</h5>
-                                <h5>85%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "85%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>Mongo DB</h5>
-                                <h5>83%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "83%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>Express Js</h5>
-                                <h5>70%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "70%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>Node Js</h5>
-                                <h5>84%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "84%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
+            <div className='overallservices'>
+                <div className='indservices' style={{ borderColor: theme }}>
+                    <div className='firstfieldset' style={{ backgroundColor: theme }}>
+                        <center>
+                            <h3>FrontEnd Web Development</h3>
+                        </center>
                     </div>
-                    <div style={{width: "100%"}}>
-                        <div>
-                            <div className='item'>
-                                <h5>HTML</h5>
-                                <h5>95%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "95%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>Next Js</h5>
-                                <h5>75%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "75%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <div>
-                            <div className='item'>
-                                <h5>Kotlin</h5>
-                                <h5>60%</h5>
-                            </div>
-                            <div className='ratings'>
-                                <div className='spanitem' style={{ backgroundColor: theme, width: "60%", height: "100%" }}></div>
-                            </div>
-                        </div>
-                    </div>
+                    <ul className='servicelists'>
+                        <li>Website Development using React Js</li>
+                        <li>Cross Platform Mobile App Development using React Native</li>
+                        <li>Can use Vanilla javascript, Html and Css for websites</li>
+                        <li>Can do Wordpress Development</li>
+                        <li>All devices Responsive Web design Layout</li>
+                    </ul>
+                </div>
+                <div className='indservices' style={{ borderColor: theme }}>
+                    <div className='firstfieldset' style={{ backgroundColor: theme }}>
+                        <center>
+                            <h3>Cross-platform Mobile Application</h3>
+                        </center>                    </div>
+                    <ul className='servicelists'>
+                        <li>Cross Platform Mobile Application Development using React Native</li>
+                        <li>Over 1+ year experience with react Native</li>
+                    </ul>
+                </div>
+                <div className='indservices' style={{ borderColor: theme }}>
+                    <div className='firstfieldset' style={{ backgroundColor: theme }}>
+                        <center>
+                            <h3>Backend Services</h3>
+                        </center>                    </div>
+                    <ul className='servicelists'>
+                        <li>Pro mern stack developer</li>
+                        <li>Have experience with Google Cloud, Aws amplify and GraphQl Api</li>
+                        <li>Have a beginner experience with Django for backend web development</li>
+                    </ul>
                 </div>
             </div>
-            <Settings style={{color: "white",float:" right",padding: "30px",display: disp2, color: "white" }} onClick={() => {setDisp(disp == "none" ? "block" : "none")}}/>
-            <div className='theme' style={{display: disp}}>
+
+            <Settings style={{ color: "white", float: "right", padding: "10px", display: disp2, color: "white", position: "fixed", bottom: "0" }} onClick={() => { setDisp(disp == "none" ? "block" : "none") }} />
+            <div className='theme' style={{ display: disp }}>
                 <center>
                 </center>
-                <p style={{fontWeight: "bolder", fontSize: "large"}}>Theme Colors</p>
+                <p style={{ fontWeight: "bolder", fontSize: "large" }}>Theme Colors</p>
                 <div className='colors'>
-                    <div className='brown' onClick={() => {setTheme("brown")}}></div>
-                    <div className='orange' onClick={() => {setTheme("orange")}}></div>
-                    <div className='teal' onClick={() => {setTheme("teal")}}></div>
-                    <div className='tan' onClick={() => {setTheme("tan")}}></div>
-                    <div className='pink' onClick={() => {setTheme("pink")}}></div>
+                <div className='brown' onClick={brownth}></div>
+                    <div className='orange' onClick={orangeth}></div>
+                    <div className='teal' onClick={tealth}></div>
+                    <div className='tan' onClick={tanth}></div>
+                    <div className='pink' onClick={pinkth}></div>
                 </div>
             </div>
         </div>

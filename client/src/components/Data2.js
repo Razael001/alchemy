@@ -7,6 +7,13 @@ export const Projectz = [
         link: "https://weatherrz.netlify.app/"
     },
     {
+        img: ["../images/deriv1.jpeg", "../images/deriv2.jpeg", "../images/deriv3.jpeg"],
+        name: "Deriv Official clone",
+        no: 0,
+        desc: "an online trading platform available 24/7 with a wide selection of derivatives",
+        link: "https://deriv.netlify.app/"
+    },
+    {
         img: ["../images/sophie1.jpeg", "../images/sophie2.jpeg"],
         name: "Sophie Brittat",
         no: 0,
@@ -34,6 +41,13 @@ export const Projectz = [
         no: 0,
         desc: "Meet your cooking coach! Over 5000 Tasty recipes now at your finger Tips; an innovative recipe app,  Your very own mobile cookbook",
         link: "https://reciperz.netlify.app/"
+    },
+    {
+        img: ["../images/typing1.png"],
+        name: "Typing Game",
+        no: 0,
+        desc: "Type as many words as you can before the time runs out",
+        link: "https://typinggamerz.netlify.app/"
     },
     {
         img: ["../images/Expense1.jpeg", "../images/expense5.png", "../images/Expense2.png", "../images/expense3.png", "../images/expense4.png"],

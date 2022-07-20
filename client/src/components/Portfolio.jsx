@@ -6,10 +6,10 @@ import Project from './Project';
 import { Projectz } from './Data2';
 
 
-const Portfolio = ({ theme, setTheme, portdi, setInfodi, setAboutdi, setServdi, setContdi, setPortdi }) => {
+const Portfolio = ({navdis, setNavdis, theme, setTheme, portdi, setInfodi, setAboutdi, setServdi, setContdi, setPortdi }) => {
 
     return (
-        <div className='aboutp' style={{ display: portdi }}>
+        <div className='aboutp' style={{ display: portdi }} onClick={() => {setNavdis("none")}}>
             <div className='portef'>
                 <h1 className='textheader'> Portfolio</h1>
                 <div className='flex1' style={{ backgroundColor: theme }}></div>

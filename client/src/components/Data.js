@@ -1,10 +1,17 @@
 export const Projects = [
     {
-        img: ["../images/cord1.jpeg","../images/cord8.jpeg", "../images/cord2.jpeg", "../images/cord3.jpeg", "../images/cord4.jpeg", "../images/cord5.jpeg", "../images/cord6.jpeg","../images/cord7.jpeg", ],
-        name: "Friend Cord",
+        img: ["../images/space1.jpeg", "../images/space2.jpeg", "../images/space4.jpeg", "../images/space5.jpeg", "../images/space3.jpeg",],
+        name: "Tech Space",
         no: 0,
-        desc: "A Prototype(not fully developed) tinder like social media app, meet new people,view profile card, connect, Real time chat available, ",
-        link: "https://friendcordrz.herokuapp.com"
+        desc: "Made for developers and programmers in my team, Tech Space is a Real-time group chat app that enables us to collaborate more efficiently and quickly.All messages to be cleared by admin after a discussion. I built tech space as a safe workspace for my team and i",
+        link: "https://chatapprz.herokuapp.com/"
+    },
+    {
+        img: ["../images/verizon1.jpeg", "../images/verizon2.jpeg"],
+        name: "Huge inx",
+        no: 0,
+        desc: "Based on intuitive design patterns, the Full Transparency interface clearly shows a permanent record of Verizon's corporate news and information.",
+        link: "https://hugeinx.netlify.app/"
     },
     {
         img: ["../images/habith.jpeg", "../images/habita.jpeg", "../images/habitc.jpeg", "../images/habitd.jpeg" , "../images/habite.jpeg", "../images/habitf.jpeg", "../images/habitg.jpeg"],
@@ -12,6 +19,13 @@ export const Projects = [
         no: 0,
         desc: "Habit Now(still in production) is a habit tracker app that helps you to build good habits, reach your goals. Track your habits with stats and notes, analyze habits with charts, therefore reach your goals at ease. It can also allow you and your friends to build an habit together.",
         link: "/"
+    },
+    {
+        img: ["../images/newspace3.jpeg","../images/newspace4.jpeg"],
+        name: "Rz Chat",
+        no: 0,
+        desc: "Rz Chat is a real time chat app, sign up, login, meet new people and enjoy the real time chats fast and encrypted",
+        link: "https://connectrz.herokuapp.com"
     },
     {
         img: ["../images/notesapp.jpeg"],
@@ -48,12 +62,12 @@ export const Projects = [
         desc: "Can only be accessed by the admin of the Rz Store Website, helps the admin in managing orders, adding or deleting products,editing products, managing users on the site also provides a chart to review the transactions on the RzStore website",
         link: "/"
     },
-   
     {
-        img: ["../images/space1.jpeg", "../images/space2.jpeg", "../images/space4.jpeg", "../images/space5.jpeg", "../images/space3.jpeg",],
-        name: "Tech Space",
+        img: ["../images/cord1.jpeg","../images/cord8.jpeg", "../images/cord2.jpeg", "../images/cord3.jpeg", "../images/cord4.jpeg", "../images/cord5.jpeg", "../images/cord6.jpeg","../images/cord7.jpeg", ],
+        name: "Friend Cord",
         no: 0,
-        desc: "Made for developers and programmers in my team, Tech Space is a Real-time group chat app that enables us to collaborate more efficiently and quickly.All messages to be cleared by admin after a discussion. I built tech space as a safe workspace for my team and i",
-        link: "https://chatapprz.herokuapp.com/"
+        desc: "A Prototype(not fully developed) tinder like social media app, meet new people,view profile card, connect, Real time chat available, ",
+        link: "https://friendcordrz.herokuapp.com"
     },
+    
 ]
