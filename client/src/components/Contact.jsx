@@ -10,6 +10,7 @@ const Contact = ({ navdis, setNavdis, theme, setTheme, contdi, setInfodi, setAbo
     const [message, setMessage] = useState("")
 
     async function sendMessage() {
+        alert("Please wait for a confirmation popup before exiting or refreshing the page")
         const response = await fetch("https://razaell.herokuapp.com/api/sendmessage", {
             method: "POST",
             headers: {
