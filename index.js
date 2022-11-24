@@ -31,6 +31,7 @@ app.post("/api/getData", async (req, res) => {
   //Getting the whole transactions details
   const data = await alchemy.core.getAssetTransfers({
     category: ["external", "internal", "erc20", "erc721", "erc1155"],
+    order: "desc"
   });
 
   //Setting variables
