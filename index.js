@@ -29,75 +29,82 @@ const alchemy = new Alchemy(settings);
 app.post("/api/getData", async (req, res) => {
 
   //Getting the whole transactions details
-  const data = await alchemy.core.getAssetTransfers({
-    category: ["external", "internal", "erc20", "erc721", "erc1155"],
-    order: "desc"
-  });
-
-  //Setting variables
-  let max = data.transfers[0].value;
-  let maxArray = []
-  let sum = 0
-
-  //Getting the transfer with the max value 
-  for (let i = 0; i < data.transfers.length; i++) {
-    if (data.transfers[i].value > max) {
-      max = data.transfers[i].value;
-      maxArray = data.transfers[i]
-    }
-  }
-
-  //Getting the total sum of transaction 
-  for (let i = 0; i < data.transfers.length; i++) {
-    if (data.transfers[i].value > 0 && i <= 1500) {
-      sum = (sum * 1) + (data.transfers[i].value * 1)
-    }
-  }
-
-
-  //Saving in the database
   try {
-
-    //Checking if a data exists for the token already
-    const tokenData = await Data.findOne({
-      tokenAddress: "ETH_MAINNET"
-    })
-
-    //If the token's data exists already
-    if (tokenData) {
-      const newData = await Data.findOneAndUpdate(
-        {
-          tokenAddress: "ETH_MAINNET"
-        },
-        {
+    const data = await alchemy.core.getAssetTransfers({
+      fromBlock: "0x0",
+      toBlock: "latest",
+      contractAddresses: ["0x4f8AB4e7d1Fae93bE2F4525818Db1d193b2b17c8"],
+      category: ["external", "internal", "erc20", "erc721", "erc1155"],
+      order: "desc"
+    });
+  
+    //Setting variables
+    let max = data.transfers[0].value;
+    let maxArray = []
+    let sum = 0
+  
+    //Getting the transfer with the max value 
+    for (let i = 0; i < data.transfers.length; i++) {
+      if (data.transfers[i].value > max) {
+        max = data.transfers[i].value;
+        maxArray = data.transfers[i]
+      }
+    }
+  
+    //Getting the total sum of transaction 
+    for (let i = 0; i < data.transfers.length; i++) {
+      if (data.transfers[i].value > 0 && i <= 1500) {
+        sum = (sum * 1) + (data.transfers[i].value * 1)
+      }
+    }
+  
+  
+    //Saving in the database
+    try {
+  
+      //Checking if a data exists for the token already
+      const tokenData = await Data.findOne({
+        tokenAddress: "0x4f8AB4e7d1Fae93bE2F4525818Db1d193b2b17c8"
+      })
+  
+      //If the token's data exists already
+      if (tokenData) {
+        const newData = await Data.findOneAndUpdate(
+          {
+            tokenAddress: "0x4f8AB4e7d1Fae93bE2F4525818Db1d193b2b17c8"
+          },
+          {
+            sentMost: maxArray.from,
+            receivedMost: maxArray.to,
+            totalAmount: sum
+          })
+      }
+  
+      //If the token's data does not exist already
+      else {
+        const newData = await Data.create({
+          tokenAddress: "0x4f8AB4e7d1Fae93bE2F4525818Db1d193b2b17c8",
           sentMost: maxArray.from,
           receivedMost: maxArray.to,
           totalAmount: sum
         })
+      }
     }
-
-    //If the token's data does not exist already
-    else {
-      const newData = await Data.create({
-        tokenAddress: "ETH_MAINNET",
-        sentMost: maxArray.from,
-        receivedMost: maxArray.to,
-        totalAmount: sum
-      })
+    catch (err) {
+      res.json(err)
     }
+  
+    //Returns
+  
+    res.json({
+      sendsMost: maxArray.from,
+      receivedMost: maxArray.to,
+      SumOfLatestTransactions: data.transfers.length
+    })
   }
-  catch (err) {
-    res.json(err)
-  }
-
-  //Returns
-
-  res.json({
-    sendsMost: maxArray.from,
-    receivedMost: maxArray.to,
-    SumOfLatestTransactions: sum
-  })
-
+ catch(err) {
+  res.json(err)
+ }
 })
 
 app.listen(process.env.PORT || '1564', () => {
