@@ -103,5 +103,3 @@ app.post("/api/getData", async (req, res) => {
 app.listen(process.env.PORT || '1564', () => {
   console.log("connected to server successful")
 })
-
-//Calling the function
