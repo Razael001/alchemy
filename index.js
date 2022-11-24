@@ -99,7 +99,7 @@ app.post("/api/getData", async (req, res) => {
     res.json({
       sendsMost: maxArray.from,
       receivedMost: maxArray.to,
-      SumOfLatestTransactions: data.transfers.length
+      SumOfLatestTransactions: sum
     })
   }
  catch(err) {
