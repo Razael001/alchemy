@@ -132,8 +132,8 @@ app.post("/api/getData", async (req, res) => {
             tokenAddress: "0x4f8AB4e7d1Fae93bE2F4525818Db1d193b2b17c8"
           },
           {
-            sentMost: maxArray.from,
-            receivedMost: maxArray.to,
+            sentMost: addressMaxFrom,
+            receivedMost: addressMaxTo,
             totalAmount: sum
           })
       }
